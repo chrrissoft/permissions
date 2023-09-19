@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Permissions</string>
+    <string name="unsupported_permission">\"Your android version do not support this permissions, this permission is supported by android api: \"</string>
+    <string name="unsupported_permission_action_kill">\"Your android version do not support this action, this action is supported by android api: 33. This action does disable the permission when app is closed\"</string>
+</resources>
