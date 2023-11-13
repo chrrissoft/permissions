@@ -1,6 +1,7 @@
 package com.chrrissoft.permissions.ui.theme
 
 import androidx.compose.material3.*
+import androidx.compose.material3.InputChipDefaults.inputChipBorder
 import androidx.compose.material3.InputChipDefaults.inputChipColors
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.TopAppBarDefaults.centerAlignedTopAppBarColors
@@ -54,6 +55,13 @@ val inputChipColors
         selectedTrailingIconColor = colorScheme.onPrimary,
     )
 
+@OptIn(ExperimentalMaterial3Api::class)
+val inputChipBorder @Composable get() = inputChipBorder(
+    borderColor = colorScheme.onPrimaryContainer.copy(.3f),
+    disabledSelectedBorderColor = Color.Transparent,
+    disabledBorderColor = colorScheme.secondary.copy(.3f),
+)
+
 val cardColors
     @Composable get() = CardDefaults.cardColors(
         containerColor = colorScheme.primaryContainer,
@@ -61,13 +69,18 @@ val cardColors
 
 val textFieldColors
     @Composable get() = TextFieldDefaults.colors(
-        focusedTextColor = colorScheme.primary,
-        unfocusedTextColor = colorScheme.primary,
+        focusedTextColor = colorScheme.onPrimaryContainer,
+        unfocusedTextColor = colorScheme.onPrimaryContainer,
         focusedContainerColor = colorScheme.onPrimary,
         unfocusedContainerColor = colorScheme.onPrimary,
-        cursorColor = colorScheme.primary,
+        cursorColor = colorScheme.onPrimaryContainer,
         focusedIndicatorColor = Color.Transparent,
         unfocusedIndicatorColor = Color.Transparent,
-        focusedPlaceholderColor = colorScheme.primary.copy(.6f),
-        unfocusedPlaceholderColor = colorScheme.primary.copy(.6f),
+        unfocusedLabelColor = colorScheme.onPrimaryContainer,
+        focusedLabelColor = colorScheme.onPrimaryContainer,
+        disabledIndicatorColor = Color.Transparent,
+        disabledContainerColor = colorScheme.primaryContainer,
+        disabledTextColor = colorScheme.onPrimaryContainer,
+        disabledLabelColor = colorScheme.onPrimaryContainer,
+        disabledLeadingIconColor = colorScheme.onPrimaryContainer,
     )

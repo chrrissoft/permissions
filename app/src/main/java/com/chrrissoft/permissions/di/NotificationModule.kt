@@ -1,10 +1,11 @@
-package com.chrrissoft.permissions
+package com.chrrissoft.permissions.di
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
-import android.os.Build
+import android.os.Build.VERSION_CODES.O
 import androidx.annotation.RequiresApi
+import com.chrrissoft.permissions.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,7 +21,7 @@ object NotificationModule {
     }
 
     @Provides
-    @RequiresApi(Build.VERSION_CODES.O)
+    @RequiresApi(O)
     fun provideGeneralChannel(): NotificationChannel {
         return NotificationChannel(
             Constants.GENERAL_CHANNEL_ID,

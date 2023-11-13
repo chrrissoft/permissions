@@ -2,4 +2,47 @@
     <string name="app_name">Permissions</string>
     <string name="unsupported_permission">\"Your android version do not support this permissions, this permission is supported by android api: \"</string>
     <string name="unsupported_permission_action_kill">\"Your android version do not support this action, this action is supported by android api: 33. This action does disable the permission when app is closed\"</string>
+
+
+    <string name="normal_permission_group_label">Normal permissions</string>
+    <string name="run_time_permission_group_label">Run time permissions</string>
+    <string name="signature_permission_group_label">Signature permissions</string>
+
+    <string name="normal_permission_group_desc">Normal permissions</string>
+    <string name="run_time_permission_group_desc">Run time permissions</string>
+    <string name="signature_permission_group_desc">Signature permissions</string>
+
+
+
+
+
+    <string name="normal_permission_0_label">Normal permission 0</string>
+    <string name="normal_permission_1_label">Normal permission 1</string>
+    <string name="normal_permission_2_label">Normal permission 2</string>
+
+    <string name="run_time_permission_0_label">Run time permission 0</string>
+    <string name="run_time_permission_1_label">Run time permission 1</string>
+    <string name="run_time_permission_2_label">Run time permission 2</string>
+
+    <string name="signature_permission_0_label">Signature permission 0</string>
+    <string name="signature_permission_1_label">Signature permission 1</string>
+    <string name="signature_permission_2_label">Signature permission 2</string>
+
+
+    <string name="normal_permission_0_desc">Normal 0 description</string>
+    <string name="normal_permission_1_desc">Normal 1 description</string>
+    <string name="normal_permission_2_desc">Normal 2 description</string>
+
+    <string name="run_time_permission_0_desc">Run time 0 description</string>
+    <string name="run_time_permission_1_desc">Run time 1 description</string>
+    <string name="run_time_permission_2_desc">Run time 2 description</string>
+
+    <string name="signature_permission_0_desc">Signature 0 description</string>
+    <string name="signature_permission_1_desc">Signature 1 description</string>
+    <string name="signature_permission_2_desc">Signature 2 description</string>
+
+
+
+
+
 </resources>

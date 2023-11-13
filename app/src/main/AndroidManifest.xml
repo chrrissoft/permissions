@@ -1,41 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
     <!-- run time -->
-    <uses-permission android:name= "android.permission.ADD_VOICEMAIL" />
-    <uses-permission android:name= "android.permission.ANSWER_PHONE_CALLS" />
-    <uses-permission android:name= "android.permission.BLUETOOTH_SCAN" />
-    <uses-permission android:name= "android.permission.BODY_SENSORS" />
-    <uses-permission android:name= "android.permission.BODY_SENSORS_BACKGROUND" />
-    <uses-permission android:name= "android.permission.CALL_PHONE" />
-    <uses-permission android:name= "android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name= "android.permission.READ_CALENDAR" />
-    <uses-permission android:name= "android.permission.WRITE_CALENDAR" />
-    <uses-permission android:name= "android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name= "android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name= "android.permission.READ_MEDIA_VIDEO" />
-    <uses-permission android:name= "android.permission.READ_MEDIA_AUDIO" />
-    <uses-permission android:name= "android.permission.READ_PHONE_NUMBERS" />
-    <uses-permission android:name= "android.permission.READ_PHONE_STATE" />
-    <!-- install time -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="com.android.voicemail.permission.ADD_VOICEMAIL" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.BODY_SENSORS_BACKGROUND" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
 
+    <!-- one time && in use -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <!-- install time -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+
+    <!-- special -->
     <uses-permission android:name="android.permission.MANAGE_MEDIA" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+
+
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+
+    <!-- custom -->
+    <permission-group
+        android:name="com.chrrissoft.permissions.permissions.NORMAL_PERMISSIONS"
+        android:description="@string/normal_permission_group_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/normal_permission_group_desc"
+        android:logo="@drawable/ic_launcher_foreground" />
+    <permission-group
+        android:name="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSIONS"
+        android:description="@string/run_time_permission_group_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/run_time_permission_group_desc"
+        android:logo="@drawable/ic_launcher_foreground" />
+    <permission-group
+        android:name="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSIONS"
+        android:description="@string/signature_permission_group_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/signature_permission_group_desc"
+        android:logo="@drawable/ic_launcher_foreground" />
+
+
+    <!-- custom - normal -->
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_0"
+        android:description="@string/normal_permission_0_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/normal_permission_0_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.NORMAL_PERMISSIONS"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_1"
+        android:description="@string/normal_permission_1_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/normal_permission_1_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.NORMAL_PERMISSIONS"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_2"
+        android:description="@string/normal_permission_2_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/normal_permission_2_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.NORMAL_PERMISSIONS"
+        android:protectionLevel="normal" />
+
+
+    <!-- custom - run time -->
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_0"
+        android:description="@string/run_time_permission_0_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/run_time_permission_0_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSIONS"
+        android:protectionLevel="dangerous" />
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_1"
+        android:description="@string/run_time_permission_1_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/run_time_permission_1_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSIONS"
+        android:protectionLevel="dangerous" />
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_2"
+        android:description="@string/run_time_permission_2_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/run_time_permission_2_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSIONS"
+        android:protectionLevel="dangerous" />
+
+
+    <!-- custom - signature -->
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_0"
+        android:description="@string/signature_permission_0_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/signature_permission_0_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSIONS"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_1"
+        android:description="@string/signature_permission_1_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/signature_permission_1_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSIONS"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_2"
+        android:description="@string/signature_permission_2_desc"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/signature_permission_2_label"
+        android:logo="@drawable/ic_launcher_foreground"
+        android:permissionGroup="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSIONS"
+        android:protectionLevel="signature" />
 
 
     <application
@@ -48,11 +168,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Permissions"
-        tools:targetApi="31" >
+        tools:targetApi="34">
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Permissions" >
+            android:theme="@style/Theme.Permissions">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,20 +183,136 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="com.chrrissoft.permissions.RationaleActivity"
-            android:permission="android.permission.START_VIEW_PERMISSION_USAGE"
-            android:exported="true">
+        <activity
+            android:name="com.chrrissoft.permissions.RationaleActivity"
+            android:exported="true"
+            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
                 <action android:name="android.intent.action.VIEW_PERMISSION_USAGE_FOR_PERIOD" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
+
+        <!-- normal -->
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$Normal0"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_0">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$Normal1"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_1">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$Normal2"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_2">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- run time -->
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$RunTime0"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_0" />
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$RunTime1"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_1" />
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$RunTime2"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_2" />
+
+
+        <!-- signature -->
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$Signature0"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_0" />
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$Signature1"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_1" />
+        <activity
+            android:name="com.chrrissoft.permissions.custom.app.PermissionActivity$Signature2"
+            android:exported="true"
+            android:permission="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_2" />
+
+
+        <!-- normal -->
         <service
-            android:name=".location.ForegroundLocationPermissionService"
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$Normal0"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_0" />
+        <service
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$Normal1"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_1" />
+        <service
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$Normal2"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.NORMAL_PERMISSION_2" />
+
+
+        <!-- run time -->
+        <service
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$RunTime0"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_0" />
+        <service
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$RunTime1"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_1" />
+        <service
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$RunTime2"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.RUN_TIME_PERMISSION_2" />
+
+        <!-- signature -->
+        <service
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$Signature0"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_0" />
+        <service
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$Signature1"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_1" />
+        <service
+            android:name="com.chrrissoft.permissions.custom.app.PermissionService$Signature2"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.chrrissoft.permissions.permissions.SIGNATURE_PERMISSION_2" />
+
+
+        <service
+            android:name=".common.app.ForegroundLocationPermissionService"
             android:foregroundServiceType="location" />
-        <service android:name=".OneTimePermissionForegroundService" />
+        <service android:name=".common.app.OneTimePermissionForegroundService" />
+        <service
+            android:name="com.chrrissoft.permissions.StopServiceService"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

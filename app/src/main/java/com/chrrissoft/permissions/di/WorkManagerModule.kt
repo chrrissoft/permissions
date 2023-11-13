@@ -1,29 +1,27 @@
-package com.chrrissoft.permissions
+package com.chrrissoft.permissions.di
 
 import android.content.Context
 import androidx.work.*
-import androidx.work.OutOfQuotaPolicy.DROP_WORK_REQUEST
+import androidx.work.WorkManager.getInstance
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Qualifier
-import com.chrrissoft.permissions.location.BackgroundLocationPermissionWorker as Worker
+import com.chrrissoft.permissions.common.app.BackgroundLocationPermissionWorker as Worker
 
 @Module
 @InstallIn(SingletonComponent::class)
 object WorkManagerModule {
     @Provides
     fun provide(@ApplicationContext ctx: Context): WorkManager {
-        println("-------------- ${ctx is PermissionApp} ----------------")
-        return WorkManager.getInstance(ctx)
+        return getInstance(ctx)
     }
 
     @Provides
     @AccessBackgroundLocationRequest
-    fun provideAccessBackgroundLocationRequest(@ApplicationContext ctx: Context): OneTimeWorkRequest {
-        println("-------------- ${ctx is PermissionApp} ----------------")
+    fun provideAccessBackgroundLocationRequest(): OneTimeWorkRequest {
         return OneTimeWorkRequestBuilder<Worker>()
             .build()
     }
